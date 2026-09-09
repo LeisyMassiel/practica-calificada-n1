@@ -4,11 +4,12 @@ import os
 
 app = Flask(__name__, template_folder='templates')
 
-DB_HOST = os.environ.get('DB_HOST')
-DB_NAME = os.environ.get('DB_NAME')
-DB_USER = os.environ.get('DB_USER')
-DB_PASSWORD = os.environ.get('DB_PASSWORD')
-DB_PORT = os.environ.get('DB_PORT', '5432')
+# Configuración de PostgreSQL en Render
+DB_HOST = 'dpg-da7fkcs9v7es73bihf5g-a.virginia-postgres.render.com'
+DB_NAME = 'test_db_im2w'
+DB_USER = 'test_db_im2w_user'
+DB_PASSWORD = 'GlvQHvpGflHcgjUuugeHSlV8FV6o0Y2S'
+DB_PORT = '5432'
 
 def conectar_db():
     try:
@@ -108,8 +109,3 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=port, debug=True)
     
     
-# Configuración de PostgreSQL en Render
-DB_HOST = 'dpg-da7fkcs9v7es73bihf5g-a.virginia-postgres.render.com'
-DB_NAME = 'test_db_im2w'
-DB_USER = 'test_db_im2w_user'
-DB_PASSWORD = 'GlvQHvpGflHcgjUuugeHSlV8FV6o0Y2S'
